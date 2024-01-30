@@ -1,10 +1,10 @@
-function Card () {
+function Card (data) {
     return(
-        <div className="w-56 h-60 bg-white cursor-pointer">
+        <div className="w-56 h-50 bg-white cursor-pointer">
             <figure className="w-full object-cover">
-                <img className="rounded-lg" src="https://media.istockphoto.com/id/1281364997/es/foto/fit-hombre-entrenando-en-la-prensa-de-banco-en-el-gimnasio.jpg?s=612x612&w=0&k=20&c=PHHES14ODoH-w5U3hVhFyeFxqzMmbX1v0utsHAvqFPw=" alt="bench-press" />
+                <img className="rounded-lg" src={data.data.gifUrl} alt={data.data.name} />
             </figure>
-            <p className="px-5 mt-4 font-bold">Prensa</p>
+            <p className="px-5 mt-4 font-ligth">{data.data.name.charAt(0).toUpperCase()+ data.data.name.slice(1)}</p>
         </div>
     )
 }
