@@ -1,4 +1,4 @@
-import { useState,} from 'react'
+import {ExerciseProvider} from '../../Context'
 import './App.css'
 import NavBar from '../../Components/NavBar/NavBar'
 import { useRoutes, BrowserRouter } from 'react-router-dom'
@@ -26,10 +26,13 @@ function App() {
 
   return (
     <>
+    <ExerciseProvider>
       <BrowserRouter>
-        <NavBar/>
-        <AppRoutes/>
-      </BrowserRouter>
+          <NavBar/>
+          <AppRoutes/>
+        </BrowserRouter>
+    </ExerciseProvider>
+
     </>
   )
 }
