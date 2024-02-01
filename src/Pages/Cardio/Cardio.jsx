@@ -3,12 +3,13 @@ import Layout from "../../Components/Layout"
 import Card from "../../Components/Card"
 import {ExerciseContext} from '../../Context'
 
-function Espalda (){
+function Cardio (){
     const context = useContext(ExerciseContext)
+    
     return(
         <>
             <Layout>
-                <h1 className="mb-6 text-2xl font-bold">Espalda</h1>
+                <h1 className="mb-6 text-2xl font-bold">Cardio</h1>
                 <div className="grid gap-8 grid-cols-4 w-full max-w-screen-lg">
                     {
                         context.items?.map((item)=>(
@@ -19,9 +20,10 @@ function Espalda (){
                         ))
                     }
                 </div>
+
             </Layout>
         </>
     )
 }
 
-export default Espalda
+export default Cardio

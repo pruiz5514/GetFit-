@@ -1,7 +1,11 @@
+import {useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom"
+import {ExerciseContext} from '../../Context'
 
 function NavBar () {
     const activeStyle = 'underline underline-offset-4'
+    const context = useContext(ExerciseContext)
+    const loading = false
 
     return(
         <nav className="flex justify-between items-center w-full pr-14 pl-14 bg-white h-20 fixed top-0" >
@@ -26,10 +30,11 @@ function NavBar () {
                     </li>
                     <li>
                         <NavLink 
-                            to='pecho'
+                            to='/pecho'
                             className={({isActive})=>
                             isActive?activeStyle:undefined
-                        }
+                            }
+                            onClick={()=>context.setGroup("chest")}
                         >
                                 Pecho
                         </NavLink>
@@ -38,8 +43,9 @@ function NavBar () {
                         <NavLink 
                             to='/brazo'
                             className={({isActive})=>
-                            isActive?activeStyle:undefined
-                        }
+                                isActive?activeStyle:undefined
+                            }
+                            onClick={()=>context.setGroup("upper%20arms")}
                         >
                                 Brazo
                         </NavLink>
@@ -48,8 +54,9 @@ function NavBar () {
                         <NavLink 
                             to='/pierna'
                             className={({isActive})=>
-                            isActive?activeStyle:undefined
-                        }
+                                isActive?activeStyle:undefined
+                            }
+                            onClick={()=>context.setGroup("upper%20legs")}
                         >
                                 Pierna
                         </NavLink>
@@ -59,9 +66,21 @@ function NavBar () {
                             to='/espalda'
                             className={({isActive})=>
                             isActive?activeStyle:undefined
-                        }
+                            }
+                            onClick={()=>context.setGroup("back")}
                         >
                                 Espalda
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink 
+                            to='/cardio'
+                            className={({isActive})=>
+                            isActive?activeStyle:undefined
+                            }
+                            onClick={()=>context.setGroup("cardio")}
+                        >
+                                Cardio
                         </NavLink>
                     </li>
                 </ul>

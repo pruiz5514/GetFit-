@@ -1,6 +1,6 @@
 function Home (){
     return(
-        <section className='flex justify-between w-4/5 bg-white  mx-auto mt-20'>
+        <section className='flex justify-between w-4/5 bg-white  mx-auto mt-40'>
             <div className='w-1/2 pr-15'>
                 <h1 className='font-semibold text-5xl  mb-4 tracking-wider leading-12'>Seguimiento de entrenamientos</h1>
                 <h1 className='font-semibold text-5xl text-blue-500 tracking-wide'>Mide tu progreso</h1>

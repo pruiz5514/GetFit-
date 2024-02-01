@@ -7,6 +7,7 @@ import Pecho from '../Pecho'
 import Brazo from '../Brazo'
 import Pierna from '../Pierna'
 import Espalda from '../Espalda'
+import Cardio from '../Cardio/Cardio'
 
 function AppRoutes() {
   let routes = useRoutes([
@@ -15,6 +16,7 @@ function AppRoutes() {
     { path:'/brazo', element: <Brazo/>},
     { path:'/pierna', element: <Pierna/>},
     { path:'/espalda', element: <Espalda/>},
+    { path:'/cardio', element: <Cardio/>},
   ])
 
   return routes
