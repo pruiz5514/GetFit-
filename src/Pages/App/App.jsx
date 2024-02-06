@@ -9,6 +9,7 @@ import Pierna from '../Pierna'
 import Espalda from '../Espalda'
 import Cardio from '../Cardio/Cardio'
 
+
 function AppRoutes() {
   let routes = useRoutes([
     { path:'/', element: <Home/>},
@@ -23,8 +24,6 @@ function AppRoutes() {
 }
 
 function App() {
-
-
 
   return (
     <>

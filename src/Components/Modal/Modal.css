@@ -1,0 +1,10 @@
+.modal__textContainer{
+    overflow-y: scroll; 
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent;
+}
+
+.modal__button{
+    top:75px;
+    right: 410px
+}

@@ -2,6 +2,7 @@ import {useState, useEffect, useContext } from "react";
 import Layout from "../../Components/Layout"
 import Card from "../../Components/Card"
 import {ExerciseContext} from '../../Context'
+import Modal from "../../Components/Modal/Modal";
 
 function Pecho (){
     const context = useContext(ExerciseContext)
@@ -20,7 +21,10 @@ function Pecho (){
                         ))
                     }
                 </div>
-
+                {context.openModal && (
+                    <Modal/>
+                    )
+                }
             </Layout>
         </>
     )

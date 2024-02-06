@@ -5,7 +5,6 @@ import {ExerciseContext} from '../../Context'
 function NavBar () {
     const activeStyle = 'underline underline-offset-4'
     const context = useContext(ExerciseContext)
-    const loading = false
 
     return(
         <nav className="flex justify-between items-center w-full pr-14 pl-14 bg-white h-20 fixed top-0" >

@@ -1,7 +1,11 @@
+import { useContext } from 'react'
+import {ExerciseContext} from '../../Context'
 
 function Card (data) {
+    const context = useContext(ExerciseContext)
+
     return(
-        <div onClick={()=>console.log('melo')} className="w-56 h-50 bg-white cursor-pointer on">
+        <div onClick={()=>(context.ModalHandelClick())} className="w-56 h-50 bg-white cursor-pointer on">
             <figure className="w-full object-cover">
                 <img className="rounded-lg" src={data.data.gifUrl} alt={data.data.name} />
             </figure>
