@@ -12,7 +12,7 @@ export const ExerciseProvider = ({children}) =>{
             const options = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': '9373257537msh4d782357a49d8cbp1db691jsnba1982b08725',
+                    'X-RapidAPI-Key': '08dcbb7b0emshda08499dfca00b9p12ae9djsn748ef7da98b5',
                     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
                 }
             };
@@ -29,6 +29,22 @@ export const ExerciseProvider = ({children}) =>{
         setOpenModal(true)
     )
 
+    const [exerciseInfo, setExerciseInfo] = useState(null)
+
+    useEffect(()=>{
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '08dcbb7b0emshda08499dfca00b9p12ae9djsn748ef7da98b5',
+                'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+            }
+        };
+
+        fetch(`https://exercisedb.p.rapidapi.com/exercises/name/archer%20push%20up?limit=10`,options)
+        .then(response => response.json())
+        .then(exercise => setExerciseInfo(exercise))
+    }, [])
+
     return(
         <ExerciseContext.Provider value={{
             items,
@@ -37,7 +53,9 @@ export const ExerciseProvider = ({children}) =>{
             setGroup,
             openModal,
             setOpenModal,
-            ModalHandelClick
+            ModalHandelClick,
+            exerciseInfo,
+            setExerciseInfo
         }}>
             {children}
         </ExerciseContext.Provider>

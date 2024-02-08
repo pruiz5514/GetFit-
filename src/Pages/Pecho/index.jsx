@@ -22,7 +22,13 @@ function Pecho (){
                     }
                 </div>
                 {context.openModal && (
-                    <Modal/>
+                    context.exerciseInfo?.map((item)=>(
+                        <Modal 
+                            key = {item.id}
+                            exercise = {item}
+                        />
+                    ))
+                    
                     )
                 }
             </Layout>
