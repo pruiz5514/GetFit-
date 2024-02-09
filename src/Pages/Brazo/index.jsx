@@ -2,6 +2,7 @@ import {useState, useEffect, useContext } from "react";
 import Layout from "../../Components/Layout"
 import Card from "../../Components/Card"
 import {ExerciseContext} from '../../Context'
+import Modal from "../../Components/Modal/Modal";
 
 function Brazo (){
     const context = useContext(ExerciseContext)
@@ -20,7 +21,16 @@ function Brazo (){
                         ))
                     }
                 </div>
-
+                {context.openModal && (
+                    context.exerciseInfo?.map((item)=>(
+                        <Modal 
+                            key = {item.id}
+                            exercise = {item}
+                        />
+                    ))
+                    
+                    )
+                }
             </Layout>
         </>
     )
