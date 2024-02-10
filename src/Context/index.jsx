@@ -19,7 +19,7 @@ export const ExerciseProvider = ({children}) =>{
                     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
                 }
             };
-            fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${group}?limit=2`,options)
+            fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${group}?limit=8`,options)
             .then(response => response.json())
             .then(data => setItems(data))
         }
@@ -27,7 +27,7 @@ export const ExerciseProvider = ({children}) =>{
     },[group])
 
     //Modal de informacion del ejercicio
-    const [openModal, setOpenModal] = useState(true)
+    const [openModal, setOpenModal] = useState(false)
 
 
 
@@ -38,7 +38,6 @@ export const ExerciseProvider = ({children}) =>{
 
     const ModalHandelClick = (exercise) =>{
         setOpenModal(true)
-        console.log(exercise)
         const exerciseApi = exercise.replace(/ /g, "%20")
         setExerciseName(exerciseApi)
     }
@@ -60,6 +59,15 @@ export const ExerciseProvider = ({children}) =>{
 
     }, [exerciseName])
 
+    // Ejercicios agregadados al "carro"
+
+    const [cartExercises, setCartExcersices] = useState([])
+
+    // Contador de ejercicios
+
+    const [exerciseCounter, setExerciseCounter] = useState(0)
+
+    const [openModalList, setOpenModalList] = useState(false)
 
 
     return(
@@ -74,7 +82,13 @@ export const ExerciseProvider = ({children}) =>{
             exerciseInfo,
             setExerciseInfo,
             exerciseName,
-            setExerciseName
+            setExerciseName,
+            cartExercises,
+            setCartExcersices,
+            exerciseCounter,
+            setExerciseCounter,
+            openModalList,
+            setOpenModalList
         }}>
             {children}
         </ExerciseContext.Provider>

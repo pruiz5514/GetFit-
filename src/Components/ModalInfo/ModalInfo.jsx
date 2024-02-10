@@ -2,14 +2,14 @@ import React from "react"
 import { useContext } from "react"
 import ReactDOM from 'react-dom'
 import {ExerciseContext} from '../../Context'
-import './Modal.css'
+import './ModalInfo.css'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 
-function Modal (exercise){
+function ModalInfo (exercise){
     const context = useContext(ExerciseContext)
 
     return ReactDOM.createPortal(
-        <div className="w-100 flex items-center justify-center fixed top-0 left-0 right-0 bottom-0 bg-[rgba(32,35,41,0.8)]">
+        <div className="w-100 flex items-center justify-center fixed top-0 left-0 right-0 bottom-0 bg-[rgba(32,35,41,0.8)] z-20">
             <div  className="modal__textContainer w-1/3 h-2/3 flex flex-col mx-auto bg-white  rounded-lg p-8 relative ">
                 <div className=" flex flex-col items-center"> 
                     <h1 className="text-2xl font-bold mb-2">{exercise.exercise.name.charAt(0).toUpperCase()+ exercise.exercise.name.slice(1)}</h1>
@@ -27,4 +27,4 @@ function Modal (exercise){
     
 }
 
-export default Modal
+export default ModalInfo

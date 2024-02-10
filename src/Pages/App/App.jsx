@@ -8,6 +8,8 @@ import Brazo from '../Brazo'
 import Pierna from '../Pierna'
 import Espalda from '../Espalda'
 import Cardio from '../Cardio/Cardio'
+import Rutina from '../Rutina'
+
 
 
 function AppRoutes() {
@@ -18,6 +20,7 @@ function AppRoutes() {
     { path:'/pierna', element: <Pierna/>},
     { path:'/espalda', element: <Espalda/>},
     { path:'/cardio', element: <Cardio/>},
+    { path:'/rutina', element: <Rutina/>},
   ])
 
   return routes
@@ -29,8 +32,9 @@ function App() {
     <>
     <ExerciseProvider>
       <BrowserRouter>
-          <NavBar/>
           <AppRoutes/>
+
+          <NavBar/>
         </BrowserRouter>
     </ExerciseProvider>
 

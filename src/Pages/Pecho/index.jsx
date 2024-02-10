@@ -2,7 +2,8 @@ import {useState, useEffect, useContext } from "react";
 import Layout from "../../Components/Layout"
 import Card from "../../Components/Card"
 import {ExerciseContext} from '../../Context'
-import Modal from "../../Components/Modal/Modal";
+import ModalInfo from "../../Components/ModalInfo/ModalInfo";
+import ModaList from "../../Components/ModalList";
 
 function Pecho (){
     const context = useContext(ExerciseContext)
@@ -23,14 +24,16 @@ function Pecho (){
                 </div>
                 {context.openModal && (
                     context.exerciseInfo?.map((item)=>(
-                        <Modal 
+                        <ModalInfo 
                             key = {item.id}
                             exercise = {item}
                         />
-                    ))
-                    
+                    ))    
                     )
                 }
+                {context.openModalList &&(
+                    <ModaList/>
+                )}
             </Layout>
         </>
     )
