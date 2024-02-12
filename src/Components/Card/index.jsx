@@ -2,15 +2,14 @@ import { useContext } from 'react'
 import {ExerciseContext} from '../../Context'
 import { PlusIcon } from '@heroicons/react/24/solid'
 
+
 function Card (data) {
     const context = useContext(ExerciseContext)
 
     const addExercises = (event,exersiceData) =>{
         event.stopPropagation();
         context.setCartExcersices([... context.cartExercises, exersiceData])
-        console.log(context.cartExercises)
-        console.log(context.cartExercises.length)
-        context.setExerciseCounter(context.cartExercises.length)
+        context.setExerciseCounter(context.cartExercises.length + 1 )
     }
 
     return(
