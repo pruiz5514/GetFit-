@@ -9,6 +9,12 @@ import ExerciseList from "../ExerciseList/ExerciseList"
 function ModaList (){
     const context = useContext(ExerciseContext)
 
+    const removeExercise = (id)=>{
+        const filteredExercise = context.cartExercises.filter(exercise => exercise.id != id)
+        context.setCartExcersices (filteredExercise)
+        context.setExerciseCounter(filteredExercise.length)
+    }
+
     return ReactDOM.createPortal(
         <div className="w-100 flex items-center justify-center fixed top-0 left-0 right-0 bottom-0 bg-[rgba(32,35,41,0.8)] z-20">
             <div  className="modalList__textContainer w-1/3 h-3/4 flex flex-col mx-auto bg-white  rounded-lg p-8 relative ">
@@ -17,9 +23,11 @@ function ModaList (){
                 <div className="mb-2">
                     {context.cartExercises.map(exercise=>(
                         <ExerciseList
+                            id={exercise.id}
                             key={exercise.id}
                             title = {exercise.name}
                             gifUrl = {exercise.gifUrl}
+                            removeExercise = {removeExercise}
                         />
                     ))}
                 </div>
