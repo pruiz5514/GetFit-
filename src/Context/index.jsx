@@ -67,7 +67,13 @@ export const ExerciseProvider = ({children}) =>{
 
     const [exerciseCounter, setExerciseCounter] = useState(0)
 
+
+    // Modal de lista  de ejercicios
     const [openModalList, setOpenModalList] = useState(false)
+
+   // Rutinas 
+   
+   const [rutine, setRutine] = useState([])
 
 
     return(
@@ -88,7 +94,9 @@ export const ExerciseProvider = ({children}) =>{
             exerciseCounter,
             setExerciseCounter,
             openModalList,
-            setOpenModalList
+            setOpenModalList,
+            rutine,
+            setRutine
         }}>
             {children}
         </ExerciseContext.Provider>

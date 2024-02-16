@@ -1,6 +1,7 @@
 import React from "react"
 import { useContext } from "react"
 import ReactDOM from 'react-dom'
+import { Link } from "react-router-dom"
 import {ExerciseContext} from '../../Context'
 import './ModalList.css'
 import { XMarkIcon } from '@heroicons/react/24/solid'
@@ -13,6 +14,17 @@ function ModaList (){
         const filteredExercise = context.cartExercises.filter(exercise => exercise.id != id)
         context.setCartExcersices (filteredExercise)
         context.setExerciseCounter(filteredExercise.length)
+    }
+
+    const addRutine = () => {
+        const rutineToAdd = {
+            date: '01.02.23',
+            exercises: context.cartExercises,
+        }
+        context.setRutine([...context.rutine, rutineToAdd])
+        context.setCartExcersices([])
+        context.setExerciseCounter(0)
+        context.setOpenModalList(false)
     }
 
     return ReactDOM.createPortal(
@@ -31,8 +43,14 @@ function ModaList (){
                         />
                     ))}
                 </div>
+                
+                <div className="flex justify-center"> 
+                    <Link to ='/rutina' >
+                        <button onClick={()=>(addRutine())} className="bg-blue-500 text-white font-bold rounded-lg w-40 h-9 py-1 self-center ">Agregar rutina </button>
+                    </Link>
+                </div>
 
-
+                                 
             </div>
             <button className="modalList__button absolute right-0 top-0 w-9 h-9 bg-slate-300 rounded-full p-1 font-bold" onClick={()=>(context.setOpenModalList(false))}><XMarkIcon/></button>
 

@@ -9,7 +9,7 @@ import Pierna from '../Pierna'
 import Espalda from '../Espalda'
 import Cardio from '../Cardio/Cardio'
 import Rutina from '../Rutina'
-
+import RutinaSelect from '../RutinaSelect'
 
 
 function AppRoutes() {
@@ -21,6 +21,7 @@ function AppRoutes() {
     { path:'/espalda', element: <Espalda/>},
     { path:'/cardio', element: <Cardio/>},
     { path:'/rutina', element: <Rutina/>},
+    { path:'/rutina/:id', element: <RutinaSelect/>},
   ])
 
   return routes
@@ -33,7 +34,6 @@ function App() {
     <ExerciseProvider>
       <BrowserRouter>
           <AppRoutes/>
-
           <NavBar/>
         </BrowserRouter>
     </ExerciseProvider>
