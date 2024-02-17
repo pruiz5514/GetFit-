@@ -19,7 +19,7 @@ function Rutina () {
                 {context.rutine?.map((rutina, index) =>(
                     <Link key={index} to={`${index}`}>
                         <RutineCard
-                            name = {rutina.date}
+                            name = {rutina.name}
                         />
                     </Link>
 

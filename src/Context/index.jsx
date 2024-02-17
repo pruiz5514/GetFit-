@@ -75,6 +75,9 @@ export const ExerciseProvider = ({children}) =>{
    
    const [rutine, setRutine] = useState([])
 
+   // Nombres de las rutinas 
+
+   const [rutineName, setRutineName] = useState("")
 
     return(
         <ExerciseContext.Provider value={{
@@ -96,7 +99,9 @@ export const ExerciseProvider = ({children}) =>{
             openModalList,
             setOpenModalList,
             rutine,
-            setRutine
+            setRutine,
+            rutineName,
+            setRutineName
         }}>
             {children}
         </ExerciseContext.Provider>

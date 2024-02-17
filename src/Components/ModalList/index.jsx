@@ -18,13 +18,18 @@ function ModaList (){
 
     const addRutine = () => {
         const rutineToAdd = {
-            date: '01.02.23',
+            name: context.rutineName,
             exercises: context.cartExercises,
         }
         context.setRutine([...context.rutine, rutineToAdd])
         context.setCartExcersices([])
         context.setExerciseCounter(0)
         context.setOpenModalList(false)
+        context.setRutineName("")
+    }
+
+    const nameAssignment = (event) =>{
+        context.setRutineName(event.target.value)
     }
 
     return ReactDOM.createPortal(
@@ -43,14 +48,18 @@ function ModaList (){
                         />
                     ))}
                 </div>
+
+                <div className="flex justify-center">
+                    <input className="mt-2 mb-4 w-80 h-12 px-4 border  border-solid border-gray-300 rounded-lg" type="text" value={context.rutineName} onChange={(event)=>(nameAssignment(event))} placeholder="Ingrese nombre de la rutina "/>
+                </div>
                 
+
                 <div className="flex justify-center"> 
                     <Link to ='/rutina' >
                         <button onClick={()=>(addRutine())} className="bg-blue-500 text-white font-bold rounded-lg w-40 h-9 py-1 self-center ">Agregar rutina </button>
                     </Link>
                 </div>
-
-                                 
+                                             
             </div>
             <button className="modalList__button absolute right-0 top-0 w-9 h-9 bg-slate-300 rounded-full p-1 font-bold" onClick={()=>(context.setOpenModalList(false))}><XMarkIcon/></button>
 
