@@ -79,6 +79,16 @@ export const ExerciseProvider = ({children}) =>{
 
    const [rutineName, setRutineName] = useState("")
 
+   // Modal de progreso de ejercicios
+
+   const [openModalProgress, setOpenModalProgress] = useState(false)
+
+   // Nombre del ejercicio del Modal Progress
+   
+   const [ModalProgressName, setModalProgressName] = useState("")
+
+   const [date,setDate] = useState(null)
+
     return(
         <ExerciseContext.Provider value={{
             items,
@@ -101,7 +111,13 @@ export const ExerciseProvider = ({children}) =>{
             rutine,
             setRutine,
             rutineName,
-            setRutineName
+            setRutineName,
+            openModalProgress,
+            setOpenModalProgress,
+            ModalProgressName,
+            setModalProgressName,
+            date,
+            setDate
         }}>
             {children}
         </ExerciseContext.Provider>

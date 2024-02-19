@@ -5,6 +5,7 @@ import {ExerciseContext} from '../../Context'
 import ExerciseList from "../../Components/ExerciseList/ExerciseList"
 import RutineCard from "../../Components/RutineCard/RutineCard"
 import ModaList from "../../Components/ModalList";
+import ModalProgress from "../../Components/ModalProgress"
 
 
 function Rutina () {

@@ -4,6 +4,7 @@ import Card from "../../Components/Card"
 import {ExerciseContext} from '../../Context'
 import ModalInfo from "../../Components/ModalInfo/ModalInfo";
 import ModaList from "../../Components/ModalList";
+import ModalProgress from "../../Components/ModalProgress";
 
 function Pecho (){
     const context = useContext(ExerciseContext)
@@ -23,12 +24,10 @@ function Pecho (){
                     }
                 </div>
                 {context.openModal && (
-                    context.exerciseInfo?.map((item)=>(
-                        <ModalInfo 
-                            key = {item.id}
-                            exercise = {item}
-                        />
-                    ))    
+                    <ModalProgress
+                        key={context.ModalProgressName}
+                        name = {context.ModalProgressName}
+                    />   
                     )
                 }
                 {context.openModalList &&(
